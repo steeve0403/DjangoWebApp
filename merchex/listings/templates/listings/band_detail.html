@@ -1,0 +1,20 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h2>L'identifiant est {{ id }}</h2>
+
+<ul>
+    <li>Genre : {{ band.get_genre_display }}</li>
+    <li>Année de formation : {{ band.year_formed }}</li>
+    <li>Actif : {{ band.active|yesno }}</li>
+    {% if band.official_homepage %}
+    <li><a href="{{ band.official_homepage}}"> {{ band.official_homepage}} </a></li>
+    {% endif %}
+</ul>
+
+<p>{{ band.biography }}</p>
+
+<a href="{% url 'band-list'%}">Retour à tous les groupes</a>
+
+{% endblock %}

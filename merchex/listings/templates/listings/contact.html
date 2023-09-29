@@ -1,0 +1,8 @@
+<p>Nous sommes là pour vous aider.</p>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer">
+
+</form>

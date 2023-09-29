@@ -1,0 +1,13 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Groupes</h1>
+
+<ul>
+    {% for band in bands %}
+    <li><a href="{% url 'band-detail' band.id %}">{{ band.name }}</a></li>
+    {% endfor%}
+</ul>
+
+{% endblock %}
